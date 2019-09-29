@@ -1,28 +1,29 @@
-#include "include/screen.h"
 #include "include/kb.h"
-#include "include/string.h"
-void kmain()
+int kmain()
 {
-	
-	clearScreen();
-	print("Welcome to VS operating system\nPlease enter a command\n");
-        while(1)
-        {
-              print("\nVS>");
-              string ch = readStr();
-              if(strEql(ch,"cmd"))
-              {
-                 print("\n You are already in cmd\n"); 
-              }
-              else if(strEql(ch,"clear"))
-              {
-                 clearScreen(); 
-              }
-              else(strEql(ch,"cmd"))
-              {
-               print("\nBad command\n"); 
-              }
+       clearScreen();
+       print("Hi and Welcome to my operating system\nPlease enter a command");
+       printch('\n');
+       print("OS> ");
+       while (1)
+       {
+                string ch = readStr();
+                print("\n");
+                print(ch);
+               /* if(strEql(ch,"cmd"))
+                {
+                        print("\nYou are allready in cmd\n");
+                }
+                else if(strEql(ch,"clear"))
+                {
+                        clearScreen();
+                        print("OS> ");
+                }
+                
+                else
+                {
+                        print("Bad command!");
+                } */       
+       }
         
-             print("\n");
-        }
 }
