@@ -1,30 +1,33 @@
 #include "include/kb.h"
+#include "include/isr.h"
+#include "include/idt.h"
 int kmain()
 {
        isr_install();
        clearScreen();
+       
        print("Hi and Welcome to my operating system\nPlease enter a command");
        printch('\n');
        print("OS> ");
-       while(1)
+       while (1)
        {
                 string ch = readStr();
                 print("\n");
-                //print(ch);
-                if(strEql(ch,"cmd"))
+                print(ch);
+               /* if(strEql(ch,"cmd"))
                 {
-                        print("\nYou are already in cmd\n");
+                        print("\nYou are allready in cmd\n");
                 }
                 else if(strEql(ch,"clear"))
                 {
                         clearScreen();
-                        print("OS> ");
+                        print("NIDOS> ");
                 }
+                
                 else
                 {
-                        print("\nBad command!\n");
-                }    
-		print("OS> ");
+                        print("Bad command!");
+                } */       
        }
         
 }
