@@ -1,6 +1,12 @@
 #nasm -f elf32 kernel.asm -o kasm.o
 gcc -m32 -c kernel.c -o kc.o -ffreestanding                                                                     #New
 gcc -m32 -c include/system.c -o obj/system.o -ffreestanding                                                     #New
+gcc -m32 -c include/isr.c -o obj/isr.o --ffreestanding
+#New
+gcc -m32 -c include/idt.c -o obj/idt.o --ffreestanding
+#new
+gcc -m32 -c include/util.c -o obj/util.o --ffreestanding
+#new
 gcc -m32 -c include/string.c -o obj/string.o -ffreestanding                                                     #New
 gcc -m32 -c include/screen.c -o obj/screen.o -ffreestanding                                                     #New
 gcc -m32 -c include/kb.c -o obj/kb.o -ffreestanding                                                             #New
